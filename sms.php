@@ -1,20 +1,22 @@
 <?php
     require "Services/Twilio.php";
-     
-    // Set our AccountSid and AuthToken from twilio.com/user/account
-    $AccountSid = "";
-    $AuthToken = "";
  
+    // make an associative array of numbers to people.
+    $json_string = file_get_contents("info.json");
+    $info = json_decode($json_string,true);
+ 
+    // Set our AccountSid and AuthToken from twilio.com/user/account
+    $AccountSid = info["AccountSid"];
+    $AuthToken = info["AuthToken"];
+
     // Instantiate a new Twilio Rest Client
     $client = new Services_Twilio($AccountSid, $AuthToken);
  
     /* Your Twilio Number or Outgoing Caller ID */
-    $from = '';
+    $from = info["from"];
 
-    // make an associative array of numbers to people.
-    $json_string = file_get_contents("numbers.json");
-    $people = json_decode($json_string,true);
- 
+    $people = info["people"]
+
     $message = stripslashes($_REQUEST['Body']);
     $chunks = explode("||||",wordwrap($message,145,"||||"));
 
