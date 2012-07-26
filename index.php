@@ -110,6 +110,7 @@ if(($max_session_time>0 && !empty($session_expires) && mktime()>$session_expires
 <html lang=en>
 <head>
 <meta charset=utf-8>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 <title>Group Chat</title>
 <style type="text/css">
 body {
@@ -156,6 +157,7 @@ $_SESSION['mpass_session_expires'] = mktime()+$max_session_time;
 <html lang=en>
 <head>
 <meta charset=utf-8>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 <title>Group Chat</title>
 <style type="text/css">
 body {
@@ -167,6 +169,18 @@ body {
     width: 510px;
     margin: 50px auto 20px auto;
     padding: 0;
+}
+#bottom-link {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    background: #000000;
+    opacity: 0.5;
+    width: 100px;
+}
+#bottom-link a {
+    color: #FFFFFF;
 }
 td {
     min-width: 100px;
@@ -189,11 +203,15 @@ img {
 <body>
 <div id="content">
 <h1>Group Chat</h1>
+<div id="bottom-link">
+<a href="#bottom">Go to bottom</a>
+</div>
 <table>
 <?
 include $_SERVER['NFSN_SITE_ROOT']."protected/log.php"
 ?>
 </table>
+<a name="bottom"></a>
 </div>
 </body>
 </html>
