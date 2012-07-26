@@ -12,10 +12,17 @@ The info.json file should have the following format:
         "AccountSid": "sfvnjssfvojnsfjnvvdsnjofvjnofe",
         "AuthToken": "kbsevjbsefnjvidsfonjvsfnjovndjof",
         "from": "+19095551234",
+        "LogFile": "log.html",
         "people": {
             "+17155554859": "Alice",
             "+14635559275": "Bob",
             "+13835558492": "Charles",
             "+19475554719": "Dasiy"
+        },
+        "profiles": {
+            "+17155554859": "alice",
+            "+14635559275": "bsmith",
+            "+13835558492": "charleydickens",
+            "+19475554719": "daisymae"
         }
     }
