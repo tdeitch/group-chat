@@ -25,6 +25,10 @@
 
 session_start();
 
+// Import info
+$json_string = file_get_contents($_SERVER['NFSN_SITE_ROOT']."protected/info.json");
+$info = json_decode($json_string,true);
+
 //--------------------------
 // user definable variables:
 //--------------------------
@@ -42,7 +46,7 @@ $alert = "";
 
 // acceptable passwords:
 $cmp_pass = Array();
-$cmp_pass[] = "";
+$cmp_pass[] = $info["Password"];
 
 // maximum number of bad logins before user locked out
 // use a value of zero for no hammering protection
@@ -111,23 +115,12 @@ if(($max_session_time>0 && !empty($session_expires) && mktime()>$session_expires
 <head>
 <meta charset=utf-8>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-<title>Group Chat</title>
-<style type="text/css">
-body {
-    font-family: "Helvetica Neue", "Helvetica", sans-serif;
-    font-size: 11pt;
-    word-wrap: break-word;
-}
-#content {
-    width: 510px;
-    margin: 50px auto 20px auto;
-    padding: 0;
-}
-</style>
+<title><? echo $info["GroupName"] ?></title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <div id="content">
-<h1>Group Chat</h1>
+<h1><? echo $info["GroupName"] ?></h1>
 <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
 <p><center>
 Please log in to continue:<br>
@@ -158,51 +151,12 @@ $_SESSION['mpass_session_expires'] = mktime()+$max_session_time;
 <head>
 <meta charset=utf-8>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-<title>Group Chat</title>
-<style type="text/css">
-body {
-    font-family: "Helvetica Neue", "Helvetica", sans-serif;
-    font-size: 11pt;
-    word-wrap: break-word;
-}
-#content {
-    width: 510px;
-    margin: 50px auto 20px auto;
-    padding: 0;
-}
-#bottom-link {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    text-align: center;
-    background: #000000;
-    opacity: 0.5;
-    width: 100px;
-}
-#bottom-link a {
-    color: #FFFFFF;
-}
-td {
-    min-width: 100px;
-    max-width: 400px;
-    padding-bottom: 28pt;
-}
-.author {
-    font-size: 12pt;
-    text-align: center;
-}
-.date {
-    color: #666;
-    padding-top: 6pt;
-}
-img {
-    max-width: 64px;
-}
-</style>
+<title><? echo $info["GroupName"] ?></title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <div id="content">
-<h1>Group Chat</h1>
+<h1><? echo $info["GroupName"] ?></h1>
 <div id="bottom-link">
 <a href="#bottom">Go to bottom</a>
 </div>

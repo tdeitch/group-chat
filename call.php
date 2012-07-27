@@ -10,12 +10,12 @@
         echo "<Response>";
         echo"<Say>Hello, ".$people[$_REQUEST['From']]."</Say>";
         echo "<Dial>";
-        echo "<Conference>GroupChat</Conference>";
+        echo "<Conference>".$info["ConferenceRoom"]."</Conference>";
         echo "</Dial>";
         echo "</Response>";
     }
     else {
-        echo "<Response>";
-        echo "</Response>";
+        echo "<Response>"
+        echo "</Response>"
     }
 ?>
