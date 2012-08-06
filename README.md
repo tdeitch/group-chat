@@ -11,7 +11,7 @@ The info.json file should have the following format:
     {
         "AccountSid": "sfvnjssfvojnsfjnvvdsnjofvjnofe",
         "AuthToken": "kbsevjbsefnjvidsfonjvsfnjovndjof",
-        "Password": "SHA51HASHOFPASSWORD",
+        "Password": "SHA512HASHOFPASSWORD",
         "from": "+19095551234",
         "GroupName": "Our Fun Group!",
         "ConferenceRoom": "FunRoom",
