@@ -26,7 +26,7 @@
     }
 
     $fh = fopen($_SERVER['NFSN_SITE_ROOT']."protected/log.php", 'a');
-    $stringData = "<tr><td class=\"author\"><img src=\"images/".$people[$_REQUEST['From']].".jpg\"><br>".$people[$_REQUEST['From']]."</td><td class=\"message-text\">".stripslashes($_REQUEST['Body'])."<div class=\"date\">".date('D, d M Y H:i:s')."</div></td></tr>\n";
+    $stringData = "<tr><td class=\"author\"><img src=\"images/".$people[$_REQUEST['From']].".jpg\"><br>".$people[$_REQUEST['From']]."</td><td class=\"message-text\">".stripslashes($_REQUEST['Body'])."<div class=\"date\">".date('D, d M Y H:i:s')." UTC</div></td></tr>\n";
     fwrite($fh, $stringData);
     fclose($fh);
 
