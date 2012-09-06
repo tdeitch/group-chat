@@ -10,7 +10,7 @@
         echo "<Response>";
         echo"<Say>Hello, ".$people[$_REQUEST['From']]."</Say>";
         echo "<Dial>";
-        echo "<Conference>".$info["ConferenceRoom"]."</Conference>";
+        echo "<Conference>".$info["conferenceroom"]."</Conference>";
         echo "</Dial>";
         echo "</Response>";
     }

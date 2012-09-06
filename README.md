@@ -11,11 +11,11 @@ The info.json file should have the following format:
     {
         "AccountSid": "sfvnjssfvojnsfjnvvdsnjofvjnofe",
         "AuthToken": "kbsevjbsefnjvidsfonjvsfnjovndjof",
-        "Password": "SHA512HASHOFPASSWORD",
-        "from": "+19095551234",
-        "GroupName": "Our Fun Group!",
-        "ConferenceRoom": "FunRoom",
-        "LogFile": "log.html",
+        "From": "+19095551234",
+        "password": "SHA512HASHOFPASSWORD",
+        "groupname": "Our Fun Group!",
+        "conferenceroom": "FunRoom",
+        "logfile": "protected/log.php",
         "people": {
             "+17155554859": "Alice",
             "+14635559275": "Bob",

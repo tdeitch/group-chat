@@ -46,7 +46,7 @@ $alert = "";
 
 // acceptable passwords:
 $cmp_pass = Array();
-$cmp_pass[] = $info["Password"];
+$cmp_pass[] = $info["password"];
 
 // maximum number of bad logins before user locked out
 // use a value of zero for no hammering protection
@@ -64,8 +64,8 @@ $max_attempts++;
 
 if(!empty($_POST['mpass_pass']))
 {
-    // store md5'ed password
-    $_SESSION['mpass_pass'] = md5($_POST['mpass_pass']);
+    // store SHAed password
+    $_SESSION['mpass_pass'] = hash('sha512', $_POST['mpass_pass']);
 }
 
 if(empty($_SESSION['mpass_attempts']))
@@ -115,12 +115,12 @@ if(($max_session_time>0 && !empty($session_expires) && mktime()>$session_expires
 <head>
 <meta charset=utf-8>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-<title><? echo $info["GroupName"] ?></title>
+<title><? echo $info["groupname"] ?></title>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <div id="content">
-<h1><? echo $info["GroupName"] ?></h1>
+<h1><? echo $info["groupname"] ?></h1>
 <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
 <p><center>
 Please log in to continue:<br>
@@ -151,12 +151,12 @@ $_SESSION['mpass_session_expires'] = mktime()+$max_session_time;
 <head>
 <meta charset=utf-8>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-<title><? echo $info["GroupName"] ?></title>
+<title><? echo $info["groupname"] ?></title>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <div id="content">
-<h1><? echo $info["GroupName"] ?></h1>
+<h1><? echo $info["groupname"] ?></h1>
 <div id="bottom-link">
 <a href="#bottom">Go to bottom</a>
 </div>
