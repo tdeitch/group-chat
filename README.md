@@ -23,9 +23,9 @@ The info.json file should have the following format:
             "+19475554719": "Dasiy"
         },
         "profiles": {
-            "+17155554859": "alice",
-            "+14635559275": "bsmith",
-            "+13835558492": "charleydickens",
-            "+19475554719": "daisymae"
+            "Alice": "alice",
+            "Bob": "bsmith",
+            "Charles": "charleydickens",
+            "Daisy": "daisymae"
         }
     }
