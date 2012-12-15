@@ -8,7 +8,6 @@
     $client = new Services_Twilio($AccountSid, $AuthToken);
     $from = $info["from"];
     $people = $info["people"];
-    $profiles = $info["profiles"];
 
     $message = stripslashes($_REQUEST['Body']);
     $chunks = explode("||||",wordwrap($message,145,"||||"));
@@ -25,7 +24,7 @@
         }
     }
 
-    $fh = fopen($_SERVER['NFSN_SITE_ROOT']."protected/log.php", 'a');
+    $fh = fopen($_SERVER['NFSN_SITE_ROOT'].$info["logfile"], 'a');
     $stringData = "<tr><td class=\"author\"><img src=\"images/".$people[$_REQUEST['From']].".jpg\"><br>".$people[$_REQUEST['From']]."</td><td class=\"message-text\">".stripslashes($_REQUEST['Body'])."<div class=\"date\">".date('D, d M Y H:i:s')." UTC</div></td></tr>\n";
     fwrite($fh, $stringData);
     fclose($fh);
